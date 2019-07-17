@@ -52,7 +52,7 @@ public class BugScript : MonoBehaviour
 
         //Spawn postavke
         energyBug = maxEnergy / 100 / 2;
-        lifeSpanBug = maxLifeSpan / 10;
+        lifeSpanBug = maxLifeSpan / 100;
         sizeBug = maxSize / 2000;
         fieldOfWiew.radius = maxFieldOfView / 100;
         fieldOfWiew.offset = new Vector2(maxFieldOfView / 100 - (maxDistanceOfView * 0.005f),0f);
@@ -101,7 +101,7 @@ public class BugScript : MonoBehaviour
 
         //DOK JE BUBA ZIVA
 
-        currentSpeed = maxSpeed / (sizeBug) * (maxEnergy / 1000 + 1) / 100; //Brzina se smanjuje u odnosu na velicinu i povecava u odnosu na kolicinu energije
+        currentSpeed = maxSpeed / (sizeBug / 50 + 1) * (maxEnergy / 1000 + 1) / 100; //Brzina se smanjuje u odnosu na velicinu i povecava u odnosu na kolicinu energije
 
         transform.position = VectorCreator(currentSpeed * Time.deltaTime, directionAngle, transform.position); //Kretanje dok nema hrane
 
@@ -255,7 +255,7 @@ public class BugScript : MonoBehaviour
     private void DoEverySec() //TIMER ZA SVAKU SEKUNDU
     {
         changeDirInterval--;
-        energyBug -= (sizeBug * currentSpeed + maxFieldOfView);      // potrosnja energije po sekundi 
+        energyBug -= (sizeBug * currentSpeed) + (maxFieldOfView / 500);      // potrosnja energije po sekundi 
         lifeSpanBug -= 1 / (energyBug * 4);        // starenje - sto manje energije ima brze stari
         if (changeDirInterval == 0)             // mjenjanje smjera kretnje
         {

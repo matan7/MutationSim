@@ -291,5 +291,20 @@ PrefabInstance:
       propertyPath: timerCs
       value: 
       objectReference: {fileID: 534669906}
+    - target: {fileID: 7475294240769918874, guid: a64eb21c5df767146b159c93f6563936,
+        type: 3}
+      propertyPath: maxLifeSpan
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7475294240769918874, guid: a64eb21c5df767146b159c93f6563936,
+        type: 3}
+      propertyPath: maxEnergy
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7475294240769918874, guid: a64eb21c5df767146b159c93f6563936,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a64eb21c5df767146b159c93f6563936, type: 3}
